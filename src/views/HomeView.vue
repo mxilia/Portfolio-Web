@@ -1,8 +1,14 @@
 <script setup>
+import NavBar from "@/components/NavBar.vue"
+import Home from "@/components/Home.vue"
+import About from "@/components/About.vue"
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <NavBar />
+  <Home />
 </template>
+
+<style lang="css" scoped>
+
+</style>
