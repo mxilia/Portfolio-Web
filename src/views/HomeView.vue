@@ -2,11 +2,16 @@
 import NavBar from "@/components/NavBar.vue"
 import Home from "@/components/Home.vue"
 import About from "@/components/About.vue"
+import Project from "@/components/Project.vue"
 </script>
 
 <template>
   <NavBar />
-  <Home />
+  <div class="bg-gray-950">
+    <Home />
+    <About />
+    <Project />
+  </div>
 </template>
 
 <style lang="css" scoped>

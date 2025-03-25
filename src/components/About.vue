@@ -2,8 +2,9 @@
 </script>
 
 <template>
-    <div class="w-200 h-150 border-2 border-white rounded-2xl text-white p-1.5">
-        bla bla
+    <div class="flex flex-col items-center max-w-screen h-300">
+        <div class="flex items-center text-white font-semibold text-4xl w-300 h-20">About</div>
+        <div class="thin-white-border w-300 h-200"></div>
     </div>
 </template>
 
