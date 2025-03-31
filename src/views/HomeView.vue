@@ -7,7 +7,7 @@ import Project from "@/components/Project.vue"
 
 <template>
   <NavBar />
-  <div class="bg-gray-950">
+  <div class="bg-neutral-950">
     <Home />
     <About />
     <Project />
