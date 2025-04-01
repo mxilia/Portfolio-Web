@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="flex items-center text-white font-semibold text-4xl border-b-2 border-white mb-5 pb-3 w-300">{{ props.text }}</div>
+    <h1 class="text-2xl text-white font-semibold mb-3 w-300">{{ props.text }}</h1>
 </template>
 
 <style lang="css" scoped>
