@@ -5,7 +5,7 @@ import Background from './parts/Background.vue';
 </script>
 
 <template> 
-    <div class="absolute top-1/2 left-1/2 -translate-1/2 flex justify-center items-center gap-8 content-between border-2 border-white bg-neutral-950 p-11">
+    <div class="absolute top-1/2 left-1/2 -translate-1/2 flex justify-center items-center gap-8 content-between p-11">
         <img class="object-cover thin-white-border w-65 h-70" src="../assets/profile_pic.jpg">
         <div class= "flex flex-col gap-1.5 text-white h-68">
             <div class="block">

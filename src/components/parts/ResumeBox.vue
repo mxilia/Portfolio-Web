@@ -2,9 +2,9 @@
 </script>
 
 <template>
-    <div class="flex items-center justify-center gap-5 bg-white rounded-xl w-49 h-10">
-        <img class="w-6 h-6" :src="'/github_logo.png'">
-        <div class="text-xs font-extrabold text-black">Download My Resume</div>
+    <div class="flex items-center justify-center gap-5 bg-neutral-950 border-2 border-neutral-500 rounded-xl w-49 h-10">
+        <img class="w-5 h-5 invert-100" :src="'/github_logo.png'">
+        <div class="text-xs font-extrabold">Download My Resume</div>
     </div>
 </template>
 

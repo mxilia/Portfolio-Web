@@ -1,33 +1,52 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = ref(window.innerWidth);
+const height = ref(window.innerHeight);
 const column = 20;
+const row = ref(10);
 
-const container = ref(null);
+function updateRatio() {
+    let ratio = height.value/width.value
+    row.value = Math.round(column*ratio)
+    console.log(row.value + " " + column)
+}
+
+function updateWidth() {
+    width.value = window.innerWidth
+    updateRatio()
+}
+
+function updateHeight() {
+    height.value = window.innerHeight
+    updateRatio()
+}
 
 onMounted(() => {
-    let ratio = height/width
-    let row = Math.round(column*ratio);
-    let array = Array(row).fill().map(() => Array(column).fill(undefined));
-    for(let i=0;i<row;i++){
-        for(let j=0;j<column;j++){
-            array[i][j] = document.createElement('div');
-            array[i][j].className = "regular-cell";
-            container.value.appendChild(array[i][j]);
-        }
-    } 
+    window.addEventListener('resize', updateWidth)
+    window.addEventListener('resize', updateHeight)
+    updateRatio()
 });
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateWidth)
+    window.removeEventListener('resize', updateHeight)
+})
 </script>
 
 <template>
-    <div id="container" ref="container" onclick="" class="grid border-l-2 border-t-2 border-neutral-800 bg-neutral-950 max-w-screen h-screen grid-cols-20">
+    <div id="container" onclick="" class="grid border-l-2 border-t-2 border-neutral-800 bg-neutral-950 max-w-screen h-screen grid-cols-20">
+        <div v-for="i in row*column" :key="i" class="regular-cell"></div>
     </div>
 </template>
 
 <style>
 @import "tailwindcss";
+
+.row-cell {
+    margin: 0;
+    padding: 0;
+}
 
 .regular-cell {
     @apply border-r-2 border-b-2 border-neutral-800

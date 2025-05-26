@@ -7,8 +7,8 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="flex justify-center items-center rounded-xl w-10 h-10">
-      <img class="g invert-100 h-6" :src="props.img_path">
+    <div class="flex justify-center items-center bg-neutral-950 border-2 border-neutral-500 rounded-2xl w-10 h-10">
+      <img class="g invert-100 h-4" :src="props.img_path">
     </div>
 </template>
 
