@@ -9,7 +9,6 @@ const row = ref(10);
 function updateRatio() {
     let ratio = height.value/width.value
     row.value = Math.round(column*ratio)
-    console.log(row.value + " " + column)
 }
 
 function updateWidth() {
