@@ -6,12 +6,12 @@ import Background from './parts/Background.vue';
 
 <template> 
     <div class="absolute top-1/2 left-1/2 -translate-1/2 flex justify-center items-center gap-8 content-between p-11">
-        <img class="object-cover thin-white-border w-65 h-70" src="../assets/profile_pic.jpg">
-        <div class= "flex flex-col gap-1.5 text-white h-68">
+        <img class="object-cover rounded-2xl border-1 border-neutral-400 w-65 h-70" src="../assets/cat.jpg">
+        <div class= "flex flex-col gap-1.5 text-neutral-100 h-68">
             <div class="block">
                 <h1 class="text-6xl font-semibold">RAVINT<br>KOSOL</h1>
-                <h1 class="text-2xl font-medium italic">Undergraduate</h1>
-                <h1 class="mb-2 text-1xl font-medium">➤ Thailand, Bangkok</h1>
+                <h1 class="text-2xl text-neutral-300 font-medium italic">Undergraduate</h1>
+                <h1 class="mb-2 text-1xl text-neutral-300 font-medium">➤ Thailand, Bangkok</h1>
             </div>
             <div class="flex flex-col gap-2">
                 <ResumeBox />

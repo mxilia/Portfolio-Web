@@ -1,15 +1,21 @@
 <script setup>
 import TechTag from './TechTag.vue';
+
+const props = defineProps({
+    img_path: String,
+    text: String,
+    techTags: Array
+})
+
 </script>
 
 <template>
-    <div class="flex flex-col items-center border-2 border-white p-5 w-75 h-115">
-        <img class="w-70 h-50">
-        <span class="w-full text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quam doloremque deleniti sapiente molestiae consequuntur dolorem nobis iste, blanditiis eius ab, accusantium dolores laborum quisquam, itaque eveniet corrupti reprehenderit cum!</span>
-        <div class="flex gap-0.5">
-            <TechTag :text="'SQL'" />
-            <TechTag :text="'Next.js'" />
-            <TechTag :text="'Mango'" />
+    <div class="flex flex-col items-center rounded-2xl border-2 border-neutral-400 w-75 pb-5 overflow-hidden">
+        <img class="w-full h-50 object-cover mb-2" :src="props.img_path">
+        <h1 class="text-2xl text-white font-semibold w-64">Bro</h1>
+        <span class="w-full p-2 pl-5 text-white"> {{ props.text }}</span>
+        <div class="flex gap-1 ml-10 w-full">
+            <TechTag v-for="tech in props.techTags" :key="tech":text="tech" />
         </div>
     </div>
 </template>
