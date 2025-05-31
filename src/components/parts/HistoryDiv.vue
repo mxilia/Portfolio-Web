@@ -9,8 +9,16 @@ import HistoryInfoBlock from './HistoryInfoBlock.vue';
             <div class="text-center text-xl w-1/2 education-on">Education</div>
             <div class="text-center text-xl w-1/2">Work</div>
         </div>
-        <div class="h-100 w-full border-2 border-neutral-500">
-            <HistoryInfoBlock :name="'Chulalongkorn University'" :time_text="'2024 - now'" :img_path="'/src/assets/cat.jpg'" />
+        <div class="w-full border-2 rounded-b-2xl border-neutral-500 pl-10 pt-10">
+            <HistoryInfoBlock :name="'Chulalongkorn University'" :time_text="'2024 - now'" :img_path="'/src/assets/logo/chula_logo.png'" :type="'University'"
+                :desc="['Currently studying Computer Science.']"
+            />
+            <HistoryInfoBlock :name="'Chonradsadornumrung School'" :time_text="'2021 - 2024'" :img_path="'/src/assets/logo/cru_logo.png'" :type="'High School'"
+                :desc="['Enrolled in SMTE program.']"
+            />
+            <HistoryInfoBlock :name="'Chonradsadornumrung School'" :time_text="'2018 - 2021'" :img_path="'/src/assets/logo/cru_logo.png'" :type="'Middle School'"
+                :desc="['Enrolled in SMTE program.']"
+            />
         </div>
         <div class="inactive">
 

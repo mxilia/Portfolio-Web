@@ -19,9 +19,15 @@ import ProjectDiv from './parts/ProjectDiv.vue';
     @apply grid grid-cols-4 gap-5 pt-10 w-10/12
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1200px){
     .dynamic-grid {
         @apply grid grid-cols-2 gap-5 pt-10 w-10/12
+    }
+}
+
+@media(max-width: 650px){
+    .dynamic-grid {
+        @apply grid grid-cols-1 gap-5 pt-10 w-10/12
     }
 }
 </style>
