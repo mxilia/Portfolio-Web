@@ -2,20 +2,20 @@
 import TopicText from './parts/TopicText.vue';
 import SubTopicText from './parts/SubTopicText.vue';
 import TechBox from './parts/TechBox.vue';
+import HistoryDiv from './parts/HistoryDiv.vue';
 </script>
 
 <template>
     <div class="flex flex-col items-center mt-20 max-w-screen h-300">
         <TopicText :text="'About'" />
-        <SubTopicText :text="'Myself'" />
-        <span class="text-white w-10/12 mb-3">Currently studying at Chulalongkorn University.</span>
         <SubTopicText :text="'Stack'" />
-        <div class="flex w-10/12 h-200">
+        <div class="flex w-10/12 h-50">
             <TechBox :text="'Github'" :img_path="'/github_logo.png'"/>
             <TechBox :text="'Github'" :img_path="'/github_logo.png'"/>
             <TechBox :text="'Github'" :img_path="'/github_logo.png'"/>
             <TechBox :text="'Github'" :img_path="'/github_logo.png'"/>
         </div>
+        <HistoryDiv />
     </div>
 </template>
 

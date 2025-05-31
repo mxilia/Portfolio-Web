@@ -4,18 +4,24 @@ import ProjectDiv from './parts/ProjectDiv.vue';
 </script>
 
 <template>
-    <div class="flex flex-col items-center max-w-screen h-300">
+    <div class="flex flex-col items-center max-w-screen">
         <TopicText :text="'Project'" />
-        <div class="flex flex-row flex-wrap items-center gap-10 pt-10 w-10/12">
-            <ProjectDiv :img_path="'/src/assets/profile_pic.jpg'" :text="'Hello my friend i m hello my friend i m'" :tech-tags="['SQL','Java','Mango']"/>
-            <ProjectDiv />
-            <ProjectDiv />
-            <ProjectDiv />
-            <ProjectDiv />
-            <ProjectDiv />
+        <div class="dynamic-grid">
+            <ProjectDiv :img_path="'/src/assets/project/tile_editor.png'" :topic_text="'2D-Tile-Editor'" :text="'A simple program written in pure Java for designing 2D top down game\'s map.'" :tech-tags="['Java']"/>
         </div>
     </div>
 </template>
 
 <style lang="css" scoped>
+@import "tailwindcss";
+
+.dynamic-grid {
+    @apply grid grid-cols-4 gap-5 pt-10 w-10/12
+}
+
+@media(max-width: 1000px){
+    .dynamic-grid {
+        @apply grid grid-cols-2 gap-5 pt-10 w-10/12
+    }
+}
 </style>
