@@ -4,7 +4,7 @@ import ProjectDiv from './parts/ProjectDiv.vue';
 </script>
 
 <template>
-    <div class="flex flex-col items-center max-w-screen">
+    <div class="flex flex-col items-center max-w-screen mt-20">
         <TopicText :text="'Project'" />
         <div class="dynamic-grid">
             <ProjectDiv :img_path="'/src/assets/project/tile_editor.png'" :topic_text="'2D-Tile-Editor'" :text="'A simple program written in pure Java for designing 2D top down game\'s map.'" :tech-tags="['Java']"/>
