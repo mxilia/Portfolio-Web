@@ -7,7 +7,16 @@ import ProjectDiv from './parts/ProjectDiv.vue';
     <div class="flex flex-col items-center max-w-screen mt-20">
         <TopicText :text="'Project'" />
         <div class="dynamic-grid">
-            <ProjectDiv :img_path="'/src/assets/project/tile_editor.png'" :topic_text="'2D-Tile-Editor'" :text="'A simple program written in pure Java for designing 2D top down game\'s map.'" :tech-tags="['Java']"/>
+            <ProjectDiv :img_path="'/src/assets/project/tile_editor.png'" 
+                        :topic_text="'2D-Tile-Editor'" 
+                        :text="'A simple program written in pure Java for designing 2D top down game\'s map.'" 
+                        :tech-tags="['Java']"
+            />
+            <ProjectDiv :img_path="'/src/assets/project/snake_rl.png'" 
+                        :topic_text="'Snake-RL'" 
+                        :text="'Written in Python to train a Deep Q-Learning agent to be able to complete game of snake. The algorithm is implemented using pytorch.'" 
+                        :tech-tags="['Python']"
+            />
         </div>
     </div>
 </template>
@@ -19,7 +28,13 @@ import ProjectDiv from './parts/ProjectDiv.vue';
     @apply grid grid-cols-4 gap-5 pt-10 w-10/12
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1400px){
+    .dynamic-grid {
+        @apply grid grid-cols-3 gap-5 pt-10 w-10/12
+    }
+}
+
+@media(max-width: 1000px){
     .dynamic-grid {
         @apply grid grid-cols-2 gap-5 pt-10 w-10/12
     }
