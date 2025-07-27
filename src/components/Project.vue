@@ -4,7 +4,7 @@ import ProjectDiv from './parts/ProjectDiv.vue';
 </script>
 
 <template>
-    <div class="flex flex-col items-center max-w-screen mt-20">
+    <div id="project" class="flex flex-col items-center max-w-screen pt-20">
         <TopicText :text="'Project'" />
         <div class="dynamic-grid">
             <ProjectDiv :img_path="'/src/assets/project/tile_editor.png'" 

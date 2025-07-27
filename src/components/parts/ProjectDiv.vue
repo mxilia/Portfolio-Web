@@ -22,15 +22,33 @@ const props = defineProps({
             </div>
         </div>
         <div class="flex flex-col items-center w-full mb-5">
-            <div class="w-full ml-10 flex justify-end pr-10">
-                <div class="bg-neutral-200 rounded-lg font-bold p-2 text-sm w-25 text-center">Learn More</div>
+            <div class="w-full ml-10 flex justify-end pr-10 ">
+                <div class="rounded-lg font-bold p-2 text-sm w-30 text-center animated-button">Learn More</div>
             </div>
         </div>
     </div>
 </template>
 
 <style lang="css" scoped>
+@import "tailwindcss";
+
 .minus-width {
     width: -webkit-calc(100% - 40px);
 }
+
+.animated-button {
+    background-color: var(--color-neutral-200);
+    border-width: 2px;
+    border-color: var(--color-neutral-200);
+    color: var(--color-black);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.animated-button:hover {
+    background-color: var(--color-neutral-950);
+    border-width: 2px;
+    border-color: white;
+    color: var(--color-white);
+}
+
 </style>

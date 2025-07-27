@@ -48,6 +48,7 @@ onUnmounted(() => {
 }
 
 .regular-cell {
+    transition: background-color 150ms ease-in-out;
     @apply border-r-2 border-b-2 border-neutral-800
 }
 

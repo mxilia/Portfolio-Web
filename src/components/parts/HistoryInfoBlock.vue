@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
     <div>
-        <div class="flex gap-5 mb-10">
+        <div class="flex gap-5 gap mb-10">
             <img :src="props.img_path" class="mt-1 h-16 w-16 border-2 border-white rounded-4xl">
             <div class="block"> 
                 <div class="text-neutral-400"> {{ props.type }} </div>
