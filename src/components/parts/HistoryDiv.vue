@@ -47,15 +47,18 @@ function changeActive(){
 
 .inactive {
     display: none;
+    transition: all 300ms ease-in-out;
 }
 
 .education-on {
     border-radius: 12px 0px 0px 0px;
+    transition: all 300ms ease-in-out;
     @apply bg-white text-neutral-950
 }
 
 .work-on {
     border-radius: 0px 12px 0px 0px;
+    transition: all 300ms ease-in-out;
     @apply bg-white text-neutral-950
 }
 

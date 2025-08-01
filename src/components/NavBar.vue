@@ -3,7 +3,7 @@
 
 <template>
     <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center text-white bg-gray-950 thin-white-border w-85 h-8.5">
-        <a href="#home">
+        <a href="#container">
             <div class="line_hover">Home</div>
         </a>
         <a href="#about">

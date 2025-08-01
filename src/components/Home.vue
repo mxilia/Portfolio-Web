@@ -16,15 +16,15 @@ import Background from './parts/Background.vue';
             <div class="flex flex-col gap-2">
                 <ResumeBox />
                 <div class="flex gap-3">
-                    <IconBox :img_path="'/src/assets/icon/github_logo.png'" />
-                    <IconBox :img_path="'/src/assets/icon/linkedin_logo.png'" />
-                    <IconBox :img_path="'/src/assets/icon/mail_logo.png'" />
-                    <IconBox :img_path="'/src/assets/icon/phone_logo.png'" />
+                    <IconBox :img_path="'/src/assets/icon/github_logo.png'" :link="'https://github.com/mxilia'"/>
+                    <IconBox :img_path="'/src/assets/icon/linkedin_logo.png'" :link="''"/>
+                    <IconBox :img_path="'/src/assets/icon/mail_logo.png'" :link="''"/>
+                    <IconBox :img_path="'/src/assets/icon/phone_logo.png'" :link="''"/>
                 </div>
             </div>
         </div>
     </div>
-    <Background id="home" />
+    <Background />
 </template>
 
 <style lang="css" scoped>
