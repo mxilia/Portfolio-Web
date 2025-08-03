@@ -9,13 +9,19 @@ const pause = ref(false);
 const grid = ref(Array.from({length: column*row.value}, () => Math.random() < 0.3));
 const di=[0,0,1,-1,1,1,-1,-1];
 const dj=[1,-1,0,0,1,-1,1,-1];
+const loop_play = ref(false);
+const delete_play = ref(false);
 let interval = null;
+
+function gen_grid(random_prop) {
+    grid.value = Array.from({length: column*row.value}, () => Math.random() < random_prop);
+}
 
 function updateRatio() {
     let prev_row = row.value;
     let ratio = height.value/width.value;
     row.value = Math.round(column*ratio);
-    if(prev_row != row.value) grid.value = Array.from({length: column*row.value}, () => Math.random() < 0.3);
+    if(prev_row != row.value) gen_grid(0.3);
 }
 
 function updateWidth() {
@@ -34,7 +40,7 @@ function clicked(i) {
 
 function toggle_pause() {
     pause.value = !pause.value;
-    toggle_interval()
+    toggle_interval();
 }
 
 function toggle_interval() {
@@ -59,8 +65,18 @@ function toggle_interval() {
                 else if(temp[i] && neighbor<2) grid.value[i] = false;
                 else if(temp[i] && neighbor>3) grid.value[i] = false;
             }
-        }, 500);
+        }, 750);
     }
+}
+
+function loop_clicked() {
+    loop_play.value=true;
+    gen_grid(0.3);
+}
+
+function delete_clicked() {
+    delete_play.value = true;
+    gen_grid(0);
 }
 
 onMounted(() => {
@@ -83,27 +99,93 @@ onUnmounted(() => {
     </div>
     <div class="max-w-screen text-white flex pl-1 pt-2">
         <div class="border-neutral-600 border-2 rounded-xl p-2 flex gap-0.5 flex-col justify-center items-center">
-            <div>
+            <div class="flex flex-col items-center">
                 <div class="h-4.5 p-0.5">Game of life</div>
                 <div class="text-sm text-neutral-400">John Conway</div>
+                <div class="w-[90%] h-[3px] bg-white mt-1 mb-1">
+                    <div :class="{'loading-stop' : pause, 'running_bar': !pause}"></div>
+                </div>
             </div>
             <div class="p-1 flex gap-0.5 items-center">
-                <div class="ibox">
-                    <div class="pause"></div>
+                <div class="ibox" @click="loop_clicked">
+                    <img 
+                        src="../../assets/icon/loop_icon.png"
+                        class="h-5 w-5 invert-100" 
+                        :class="{'play_loop' : loop_play}"
+                        @animationend="loop_play=false"
+                    />
                 </div>
                 <div class="ibox" @click="toggle_pause">
                     <div :class="{'pause' : pause, 'play' : !pause}"></div>
                 </div>
-                <div class="ibox">
-                    <div class="play"></div>
+                <div class="ibox" @click="delete_clicked">
+                    <img 
+                        src="../../assets/icon/trash_icon.png"
+                        class="h-4 w-4 invert-100"
+                        :class="{'play_delete' : delete_play}"
+                        @animationend="delete_play=false"
+                    />
                 </div>
             </div>
+        </div>
+        <div class="flex items-center h-[100%]">
+            hello
         </div>
     </div>
 </template>
 
 <style>
 @import "tailwindcss";
+
+@keyframes loading {
+    0% {
+        width: 0%;
+        left: 0%;
+    }
+    50% {
+        width: 100%;
+        left: 0%;
+    }
+    100% {
+        width: 0%;
+        left: 100%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.play_delete {
+    animation: fade 250ms ease-in-out;
+}
+
+.play_loop {
+    animation: rotate 250ms linear;
+}
+
+.loading-stop {
+    opacity: 0;
+    transition: all 750ms linear;
+    @apply h-[100%] bg-red-600 z-10 relative
+}
 
 .row-cell {
     margin: 0;
@@ -112,6 +194,15 @@ onUnmounted(() => {
 
 .ibox {
     @apply w-7 h-7 border-neutral-400 border-2 rounded-xl flex items-center justify-center
+}
+
+.running_bar {
+    animation-name: loading;
+    animation-duration: 750ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: all 100ms linear;
+    @apply h-[100%] bg-green-500 z-10 relative
 }
 
 .pause {
