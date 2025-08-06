@@ -14,7 +14,7 @@ const props = defineProps({
         <div class="flex justify-center items-center rounded bg-neutral-900 ml-3 w-9 h-9">
             <img :class="['h-'+props.img_height, { invert: props.img_invert }]" :src="props.img_path">
         </div>
-        <div class="text-sm text-white">{{ props.text }}</div>
+        <div class="text-sm text-white z-20">{{ props.text }}</div>
     </div>
 </template>
 

@@ -17,7 +17,7 @@ function changeActive(){
             <div class="text-center text-xl w-1/2" :class="{ 'work-on': active }" @click="changeActive()">Work</div>
         </div>
         <div class="w-full border-2 rounded-b-2xl border-neutral-500">
-            <div class="w-full h-full history_pl pt-10" :class="{ hidden : active }">
+            <div class="w-full h-full history_pl pt-10 opacity_transition" :class="{ 'inactive_his' : active}">
                 <HistoryInfoBlock :name="'Chulalongkorn University'" :time_text="'2024 - now'" :img_path="'/src/assets/logo/chula_logo.png'" :type="'University'"
                     :desc="['Currently studying Computer Science.']"
                 />
@@ -28,7 +28,7 @@ function changeActive(){
                     :desc="['Enrolled in SMTE program.']"
                 />
             </div>
-            <div class="w-full h-115 grid place-items-center":class="{ hidden : !active }">
+            <div class="w-full h-115 grid place-items-center opacity_transition" :class="{ 'inactive_his' : !active}">
                 None at the moment.
             </div>
         </div>
@@ -40,6 +40,15 @@ function changeActive(){
 
 <style>
 @import "tailwindcss";
+
+.opacity_transition {
+    transition: opacity 250ms ease-in-out;
+}
+
+.inactive_his {
+    opacity: 0;
+    display: none;
+}
 
 .history_pl {
     @apply pl-10

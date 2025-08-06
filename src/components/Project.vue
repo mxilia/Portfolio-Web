@@ -11,11 +11,13 @@ import ProjectDiv from './parts/ProjectDiv.vue';
                         :topic_text="'2D-Tile-Editor'" 
                         :text="'A simple program written in pure Java for designing 2D top down game\'s map.'" 
                         :tech-tags="['Java']"
+                        :url_learn="'https://github.com/mxilia/2D-Tile-Editor'"
             />
             <ProjectDiv :img_path="'/src/assets/project/snake_rl.png'" 
                         :topic_text="'Snake-RL'" 
                         :text="'Written in Python to train a Deep Q-Learning agent to be able to complete game of snake. The algorithm is implemented using pytorch.'" 
                         :tech-tags="['Python']"
+                        :url_learn="'https://github.com/mxilia/Snake-RL'"
             />
         </div>
     </div>
