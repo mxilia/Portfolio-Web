@@ -11,6 +11,7 @@ const di=[0,0,1,-1,1,1,-1,-1];
 const dj=[1,-1,0,0,1,-1,1,-1];
 const loop_play = ref(false);
 const delete_play = ref(false);
+const game_state = ref(true);
 let interval = null;
 
 function gen_grid(random_prop) {
@@ -98,7 +99,7 @@ onUnmounted(() => {
         <div v-for="(cell, i) in grid" :key="i" @click="clicked(i)" :class="{'regular-cell' : cell, 'irregular-cell' : !cell}"></div>
     </div>
     <div class="max-w-screen text-white flex pl-1 pt-2">
-        <div class="border-neutral-600 border-2 rounded-xl p-2 flex gap-0.5 flex-col justify-center items-center">
+        <div class="box_transition border-neutral-600 border-2 rounded-xl p-2 flex gap-0.5 flex-col justify-center items-center" :class="{ 'move_box' : !game_state }">
             <div class="flex flex-col items-center">
                 <div class="h-4.5 p-0.5">Game of life</div>
                 <div class="text-sm text-neutral-400">John Conway</div>
@@ -128,8 +129,9 @@ onUnmounted(() => {
                 </div>
             </div>
         </div>
-        <div class="flex items-center h-[100%]">
-            hello
+        <div @click="game_state=!game_state" :class="{ 'move_box' : !game_state}" class="box_transition mt-2 flex items-center h-[100%] border-r-2 border-t-2 border-b-2 border-neutral-600 rounded-tr-[8px] rounded-br-[8px] pl-1 pr-1">
+            <div v-if="game_state" class="arrow"> > </div>
+            <div v-else class="arrow"> < </div>
         </div>
     </div>
 </template>
@@ -171,6 +173,18 @@ onUnmounted(() => {
     100% {
         opacity: 1;
     }
+}
+
+.move_box {
+    transform: translateX(-135px);
+}
+
+.box_transition {
+    transition: all 600ms ease-in-out;
+}
+
+.arrow {
+    user-select: none;
 }
 
 .play_delete {

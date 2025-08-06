@@ -41,7 +41,7 @@ const props = defineProps({
     border-width: 2px;
     border-color: var(--color-neutral-200);
     color: var(--color-black);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 300ms ease-in-out;
 }
 
 .animated-button:hover {
