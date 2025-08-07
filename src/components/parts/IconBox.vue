@@ -19,7 +19,7 @@ const props = defineProps({
 @import "tailwindcss";
 
 .box {
-	transition: all 400ms ease-in-out;
+	transition: all 200ms ease-in-out;
 	@apply w-10 h-10
 }
 
@@ -28,8 +28,8 @@ const props = defineProps({
 }
 
 .box:hover {
-	scale: 1.2;
-	rotate: 360deg;
+	scale: 1.15;
+	rotate: 20deg;
 }
 
 @media(max-width: 500px){

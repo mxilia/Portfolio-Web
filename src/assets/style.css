@@ -8,6 +8,10 @@ html {
     font-family: var(--font-mono)
 }
 
+img {
+    user-select: none;
+}
+
 .thin-white-border {
     @apply border-2 border-white rounded-3xl
 }

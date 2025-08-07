@@ -23,10 +23,8 @@ const props = defineProps({
             </div>
         </div>
         <div class="flex flex-col items-center w-full mb-5">
-            <a target="_blank" :href="props.url_learn">
-                <div class="w-full ml-10 flex justify-end pl-5">
-                    <div class="rounded-lg font-bold p-2 text-sm w-30 text-center animated-button">Learn More</div>
-                </div>
+            <a target="_blank" :href="props.url_learn" class="w-full ml-10 flex justify-end pr-9">
+                <div class="rounded-lg font-bold p-2 text-sm w-30 text-center animated-button">Learn More</div>
             </a>
         </div>
     </div>
