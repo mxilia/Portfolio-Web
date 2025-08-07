@@ -6,7 +6,7 @@ import Background from './parts/Background.vue';
 
 <template> 
     <div  class="absolute top-1/2 left-1/2 -translate-1/2 flex justify-center items-center gap-8 content-between">
-        <img class="profile_pic" src="../assets/cat.jpg">
+        <img class="profile_pic" src="/cat.jpg">
         <div class= "flex flex-col gap-1.5 text-neutral-100 intro">
             <div class="block">
                 <h1 class="ltext font-semibold">RAVINT<br>KOSOL</h1>
@@ -16,10 +16,10 @@ import Background from './parts/Background.vue';
             <div class="flex flex-col gap-2">
                 <ResumeBox />
                 <div class="flex gap-3">
-                    <IconBox :img_path="'/src/assets/icon/github_icon.png'" :link="'https://github.com/mxilia'"/>
-                    <IconBox :img_path="'/src/assets/icon/linkedin_logo.png'" :link="''"/>
-                    <IconBox :img_path="'/src/assets/icon/mail_logo.png'" :link="''"/>
-                    <IconBox :img_path="'/src/assets/icon/phone_logo.png'" :link="''"/>
+                    <IconBox :img_path="'/icon/github_icon.png'" :link="'https://github.com/mxilia'"/>
+                    <IconBox :img_path="'/icon/linkedin_logo.png'" :link="''"/>
+                    <IconBox :img_path="'/icon/mail_logo.png'" :link="''"/>
+                    <IconBox :img_path="'/icon/phone_logo.png'" :link="''"/>
                 </div>
             </div>
         </div>

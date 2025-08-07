@@ -43,7 +43,7 @@ function leave_box() {
                         }"
             ></div>
             <div v-for="(name, i) in tech_name" :key="i" @mouseenter="enter_box">
-                <TechBox :text="name" :img_invert="invert_val[i]" :img_path="'/src/assets/icon/'+name.toLowerCase()+'_icon.png'" />
+                <TechBox :text="name" :img_invert="invert_val[i]" :img_path="'/icon/'+name.toLowerCase()+'_icon.png'" />
             </div>
         </div>
         <SubTopicText :text="'Experience'" />

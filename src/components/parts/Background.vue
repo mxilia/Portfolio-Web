@@ -110,7 +110,7 @@ onUnmounted(() => {
             <div class="p-1 flex gap-0.5 items-center">
                 <div class="ibox" @click="loop_clicked">
                     <img 
-                        src="../../assets/icon/loop_icon.png"
+                        src="/icon/loop_icon.png"
                         class="h-5 w-5 invert-100" 
                         :class="{'play_loop' : loop_play}"
                         @animationend="loop_play=false"
@@ -121,7 +121,7 @@ onUnmounted(() => {
                 </div>
                 <div class="ibox" @click="delete_clicked">
                     <img 
-                        src="../../assets/icon/trash_icon.png"
+                        src="/icon/trash_icon.png"
                         class="h-4 w-4 invert-100"
                         :class="{'play_delete' : delete_play}"
                         @animationend="delete_play=false"

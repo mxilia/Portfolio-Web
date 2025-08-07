@@ -3,7 +3,7 @@
 
 <template>
     <div class="flex items-center justify-center gap-3.5 bg-neutral-950 border-2 border-neutral-400 rounded-xl box">
-        <img class="pic invert-100" :src="'/src/assets/icon/resume_logo.png'">
+        <img class="pic invert-100" :src="'/icon/resume_logo.png'">
         <div class="text">Download My Resume</div>
     </div>
 </template>

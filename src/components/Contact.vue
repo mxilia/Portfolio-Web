@@ -38,7 +38,7 @@ function leave_box() {
                         }"
             ></div>
             <div v-for="(t, i) in text" :key="i" @mouseenter="enter_box">
-                <ContactBox :img_path="'/src/assets/icon/'+img_name[i]+'_icon.png'" :img_height="img_height[i]" :img_invert="img_invert[i]" :text="t"/>
+                <ContactBox :img_path="'/icon/'+img_name[i]+'_icon.png'" :img_height="img_height[i]" :img_invert="img_invert[i]" :text="t"/>
             </div>
         </div>
     </div>
