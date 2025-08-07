@@ -110,7 +110,7 @@ onUnmounted(() => {
             <div class="p-1 flex gap-0.5 items-center">
                 <div class="ibox" @click="loop_clicked">
                     <img 
-                        :src="require('@/assets/icon/loop_icon.png')"
+                        src="../../assets/icon/loop_icon.png"
                         class="h-5 w-5 invert-100" 
                         :class="{'play_loop' : loop_play}"
                         @animationend="loop_play=false"
