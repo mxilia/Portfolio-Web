@@ -3,7 +3,7 @@
 const props = defineProps({
     text: String,
     img_path: String,
-    img_invert: Int8Array
+    img_invert: Number
 })
 
 </script>
