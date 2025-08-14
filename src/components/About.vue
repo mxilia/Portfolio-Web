@@ -33,7 +33,7 @@ function leave_box() {
         <TopicText :text="'About'" />
         <SubTopicText :text="'Myself'" />
         <h1 class="text-neutral-200 w-10/12 mb-2">• Bronze Medalist in 20th TOI (Thailand Olympiad in Informatics).</h1>
-        <h1 class="text-neutral-200 w-10/12 mb-2">• Currently studying Computer Science at Chulalongkorn University.</h1>
+        <h1 class="text-neutral-200 w-10/12 mb-2">• Currently studying Computer Engineering at Chulalongkorn University.</h1>
         <h1 class="text-neutral-200 w-10/12 mb-2">• Interested in Machine Learning.</h1>
         <SubTopicText class="mt-5" :text="'Technology'" />
         <div class="flex w-10/12 mb-5 gap-2 flex-wrap" @mouseleave="leave_box">
