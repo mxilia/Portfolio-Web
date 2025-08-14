@@ -19,7 +19,7 @@ function changeActive(){
         <div class="w-full border-2 rounded-b-2xl border-neutral-500">
             <div class="w-full h-full history_pl pt-10 opacity_transition" :class="{ 'inactive_his' : active}">
                 <HistoryInfoBlock :name="'Chulalongkorn University'" :time_text="'2024 - now'" :img_path="'/logo/chula_logo.png'" :type="'University'"
-                    :desc="['Currently studying Computer Science.']"
+                    :desc="['Currently studying Computer Engineering.']"
                 />
                 <HistoryInfoBlock :name="'Chonradsadornumrung School'" :time_text="'2021 - 2024'" :img_path="'/logo/cru_logo.png'" :type="'High School'"
                     :desc="['Enrolled in SMTE program.']"
